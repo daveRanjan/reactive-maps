@@ -17,7 +17,6 @@ class Maps extends Component {
       this.setState({
         map
       });
-
       console.log(`Map Loaded : ${JSON.stringify(map.getCenter())}`)
     }
   }
@@ -27,10 +26,13 @@ class Maps extends Component {
     const markers = this.props.markers || [];
 
     return (
+
       <GoogleMap
         ref={this.onLoad.bind(this)}
         defaultZoom={this.props.zoom}
-        defaultCenter={this.props.center}>
+        defaultCenter={this.props.center}
+        fitBounds
+      >
         {markers.map((marker, index) => (
           <Marker {...marker} />
         ))}

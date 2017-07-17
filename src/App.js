@@ -1,29 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import Maps from './custom/Maps';
+import SimpleForm from './custom/PlacesForm';
 class App extends Component {
-
+  constructor() {
+    super();
+  }
 
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="Map">
-          <Maps
-            zoom={14}
-            center={{lat:28.5939254,lng:77.3370696}}
-            containerElement={
-            <div style={{ height: `100%` }} />
-          }
-            mapElement={
-                  <div style={{ height: `100%` }} />
-                } />
-        </div>
-
+        <SimpleForm/>
       </div>
     );
   }
